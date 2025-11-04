@@ -8,12 +8,13 @@ class TestBlackScholes(unittest.TestCase):
         r = 0.05
         t = 0.5
         o = 0.3
+        m = 'EU'
 
         knownCallPrice = 9.63488
 
-        model = BlackScholes(s, x, r, t, o)
+        model = BlackScholes(s, x, r, t, o, m)
 
-        callPrice = model.mainFormula()
+        callPrice = model.main()
 
         self.assertAlmostEqual(knownCallPrice, callPrice, places = 5)
 
@@ -24,12 +25,13 @@ class TestBlackScholes(unittest.TestCase):
         r = 0.05
         t = 0.5
         o = 0.3
+        m = 'EU'
         
         knownCallPrice = 16.36545
 
-        model = BlackScholes(s, x, r, t, o)
+        model = BlackScholes(s, x, r, t, o, m)
 
-        callPrice = model.mainFormula()
+        callPrice = model.main()
 
         self.assertAlmostEqual(knownCallPrice, callPrice, places = 5)
 
